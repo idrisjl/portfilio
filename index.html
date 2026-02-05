@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Idriss - Software Engineering Student passionate about Web Development and AI">
+    <meta name="keywords" content="Idriss, Software Engineer, Web Developer, AI, Portfolio">
+    <meta name="author" content="Idriss">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Idriss | Software Engineering Student">
+    <meta property="og:description" content="Modern portfolio showcasing projects in Web Development and AI">
+    <meta property="og:type" content="website">
+    
+    <title>Idriss | Software Engineering Student & Future AI Engineer</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-mode">
+    
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <div class="cube">
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+            <p class="loading-text">Loading Portfolio...</p>
+        </div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="nav-brand">Idriss</div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+            <a href="#hero" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <canvas id="three-canvas" class="three-canvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-name">
+                    <span class="name-letter">I</span>
+                    <span class="name-letter">d</span>
+                    <span class="name-letter">r</span>
+                    <span class="name-letter">i</span>
+                    <span class="name-letter">s</span>
+                    <span class="name-letter">s</span>
+                </h1>
+                <h2 class="hero-title">Software Engineering Student</h2>
+                <h3 class="hero-subtitle">
+                    <span id="typed-text"></span>
+                    <span class="cursor">|</span>
+                </h3>
+                <p class="hero-description">
+                    Passionate about building innovative solutions through code, exploring AI technologies, 
+                    and creating seamless web experiences.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn-primary">View Projects</a>
+                    <a href="#contact" class="btn-secondary">Contact Me</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll Down</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">
+                        I'm a dedicated Software Engineering student with a passion for turning ideas into elegant, 
+                        functional solutions. My journey in tech is driven by curiosity and a constant desire to learn and innovate.
+                    </p>
+                    <p>
+                        Specializing in web development and exploring the fascinating world of Artificial Intelligence, 
+                        I combine technical expertise with creative problem-solving to build applications that make a difference. 
+                        From crafting responsive user interfaces to architecting robust backend systems, I enjoy every aspect 
+                        of the development process.
+                    </p>
+                    <p>
+                        When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
+                        or brainstorming the next big idea. I believe in writing clean, maintainable code and creating user 
+                        experiences that are both beautiful and intuitive.
+                    </p>
+                    <a href="assets/cv.pdf" class="btn-download" download>
+                        <span>Download CV</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M10 3V13M10 13L14 9M10 13L6 9M3 17H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-card glass">
+                        <div class="highlight-icon">💻</div>
+                        <h3>Web Development</h3>
+                        <p>Creating responsive, modern web applications with cutting-edge technologies</p>
+                    </div>
+                    <div class="highlight-card glass">
+                        <div class="highlight-icon">🤖</div>
+                        <h3>AI Enthusiast</h3>
+                        <p>Exploring machine learning and artificial intelligence applications</p>
+                    </div>
+                    <div class="highlight-card glass">
+                        <div class="highlight-icon">🚀</div>
+                        <h3>Innovation Focused</h3>
+                        <p>Always seeking new challenges and innovative solutions to complex problems</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category glass">
+                    <h3 class="category-title">Frontend Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category glass">
+                    <h3 class="category-title">Backend Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express</span>
+                        <span class="skill-tag">PHP</span>
+                    </div>
+                </div>
+                <div class="skill-category glass">
+                    <h3 class="category-title">Database</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                    </div>
+                </div>
+                <div class="skill-category glass">
+                    <h3 class="category-title">Tools & Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">VS Code</span>
+                    </div>
+                </div>
+                <div class="skill-category glass">
+                    <h3 class="category-title">AI & Machine Learning</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Machine Learning Basics</span>
+                        <span class="skill-tag">Python for AI</span>
+                        <span class="skill-tag">Neural Networks</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card glass">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop" 
+                             alt="StageMatch AI">
+                        <div class="project-overlay">
+                            <a href="https://github.com/idrisjl" target="_blank" rel="noopener noreferrer" class="project-link">
+                                View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">StageMatch AI</h3>
+                        <p class="project-description">
+                            AI-powered platform that intelligently matches students with internship opportunities 
+                            using machine learning algorithms.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-badge">AI/ML</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glass">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=400&fit=crop" 
+                             alt="Hotel Booking Website">
+                        <div class="project-overlay">
+                            <a href="https://github.com/idrisjl" target="_blank" rel="noopener noreferrer" class="project-link">
+                                View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Hotel Booking Website</h3>
+                        <p class="project-description">
+                            Full-stack hotel reservation system with real-time availability, payment processing, 
+                            and user authentication.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Express</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">Stripe</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card glass">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" 
+                             alt="CRUD Web Application">
+                        <div class="project-overlay">
+                            <a href="https://github.com/idrisjl" target="_blank" rel="noopener noreferrer" class="project-link">
+                                View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">CRUD Web Application</h3>
+                        <p class="project-description">
+                            Modern web application demonstrating full CRUD operations with RESTful API design 
+                            and responsive UI.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Next.js</span>
+                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-badge">Tailwind CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item glass">
+                    <div class="timeline-icon">🎓</div>
+                    <div class="timeline-content">
+                        <h3>Software Engineering</h3>
+                        <p class="timeline-subtitle">Current Student</p>
+                        <p class="timeline-description">
+                            Pursuing comprehensive education in software development, algorithms, data structures, 
+                            and modern programming paradigms. Focus on full-stack development and emerging AI technologies.
+                        </p>
+                        <div class="timeline-highlights">
+                            <span>Data Structures & Algorithms</span>
+                            <span>Web Development</span>
+                            <span>Database Design</span>
+                            <span>Software Architecture</span>
+                            <span>AI Fundamentals</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item glass">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:Idrisj727@gmail.com">Idrisj727@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item glass">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:+21629651515">+216 29651515</a>
+                        </div>
+                    </div>
+                    <div class="contact-item glass">
+                        <div class="contact-icon">💼</div>
+                        <div>
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/idrisjl" target="_blank" rel="noopener noreferrer">github.com/idrisjl</a>
+                        </div>
+                    </div>
+                    <div class="contact-item glass">
+                        <div class="contact-icon">🔗</div>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/idris-jlidi-781678336" target="_blank" rel="noopener noreferrer">Idris Jlidi</a>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form glass" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Idriss. All rights reserved.</p>
+            <button class="back-to-top" id="back-to-top">
+                ↑ Back to Top
+            </button>
+        </div>
+    </footer>
+
+    <!-- Particles Background -->
+    <div id="particles"></div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
